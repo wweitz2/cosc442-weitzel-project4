@@ -26,16 +26,19 @@ public class Inventory {
     public int getChocolate() {
         return chocolate;
     }
+    
     /**
      * Method setChocolate.
      * @param chocolate int
      */
     public void setChocolate(int chocolate) {
-    	if(chocolate >= 0) {
+    	if(chocolate > 0) {
     		Inventory.chocolate = chocolate;
     	}
-    	else {
+    	else if (chocolate == 0) {
     		Inventory.chocolate = 0;
+    	} else {
+    		throw new ArithmeticException("Number cant be less than 0");
     	}
         
     }

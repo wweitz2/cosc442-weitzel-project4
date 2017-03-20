@@ -70,6 +70,23 @@ public class InventoryTest {
 		// add additional test code here
 		assertEquals(true, result);
 	}
+	
+	@Test
+	public void testEnoughIngredients_3()
+		throws Exception {
+		Inventory i = new Inventory();
+		Recipe r = new Recipe();
+		r.setAmtCoffee(15);
+		r.setAmtMilk(15);
+		r.setAmtSugar(15);
+		r.setAmtChocolate(15);
+
+		boolean result = i.enoughIngredients(r);
+
+		// add additional test code here
+		assertEquals(true, result);
+	}
+	
 
 	/**
 	 * Run the int getChocolate() method test.
@@ -150,7 +167,7 @@ public class InventoryTest {
 	 *
 	 * @generatedBy CodePro at 3/19/17 6:50 PM
 	 */
-	@Test
+	@Test(expected=ArithmeticException.class)
 	public void testSetChocolate_1()
 		throws Exception {
 		Inventory fixture = new Inventory();
@@ -214,6 +231,18 @@ public class InventoryTest {
 
 		// add additional test code here
 	}
+	
+	@Test
+	public void testSetCoffee_3() 
+			throws Exception {
+		Inventory i = new Inventory();
+		int coffee = 0;
+
+		i.setCoffee(coffee);
+		
+		// add additional test code here
+	}
+	
 
 	/**
 	 * Run the void setMilk(int) method test.
